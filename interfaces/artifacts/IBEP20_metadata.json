@@ -67,7 +67,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/rumbled-app.sol": "IBEP20"
+			"interfaces/IBEP20.sol": "IBEP20"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -81,12 +81,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/rumbled-app.sol": {
-			"keccak256": "0x71c3fe7ed98e011cadbbcc38032733b172e3c5dfbd0033d6e4b4e6ea56c48b7c",
+		"interfaces/IBEP20.sol": {
+			"keccak256": "0x688835ff52f78195380a19c7be269f7dfe215de6ebe963d91f84f96b6a07aa67",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://969cf7bc334f62b2d629b6edc71712e33099ffc96223cd5baa0969c57f564767",
-				"dweb:/ipfs/QmYnuHpxXn2zBJA7aKoAWXpWPmDobbA1m3PTcpzkiMrMWo"
+				"bzz-raw://ecd6289f839b43b8ca9c0dde5870f45819cecf8d86e6bf0fd03d1bed3d1d71a0",
+				"dweb:/ipfs/QmQ4FAPTnDkQWAnD9HqyPwv3upP3RWtpLXmJKeMXL2KhGJ"
 			]
 		}
 	},

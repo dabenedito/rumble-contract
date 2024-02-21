@@ -1,0 +1,235 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "desafiante",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "desafiado",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "valorAposta",
+						"type": "uint256"
+					}
+				],
+				"name": "DesafioCriado",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_indiceDesafio",
+						"type": "uint256"
+					}
+				],
+				"name": "aceitarDesafio",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_valorAposta",
+						"type": "uint256"
+					}
+				],
+				"name": "criarDesafio",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_indiceDesafio",
+						"type": "uint256"
+					}
+				],
+				"name": "declararJuiz",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_indiceDesafio",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_vencedor",
+						"type": "address"
+					}
+				],
+				"name": "declararVencedor",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "desafiosPorDesafiado",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "desafiante",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "desafiado",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "juiz",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "valorAposta",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "desafioAtivo",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "desafioAceito",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "vencedor",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDesafios",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "desafiante",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "desafiado",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "juiz",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "valorAposta",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "desafioAtivo",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "desafioAceito",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "vencedor",
+								"type": "address"
+							}
+						],
+						"internalType": "struct DesafioContract.Desafio[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/desafio.sol": "DesafioContract"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/desafio.sol": {
+			"keccak256": "0x9dca04411dc2abcfca72841a1985b7ec03f909cdb32841caeed4a395653102b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9b5d57426f303527768b8d3e8afc0b89640a4100b04114a56a0c2a20d9e7a8b2",
+				"dweb:/ipfs/QmPipXcTYTY9zHnTx97MwQ8xeBTtx51RxfvmDS28h5DR1n"
+			]
+		},
+		"libraries/ToString.sol": {
+			"keccak256": "0xe99eaf2ff6fb85852e647af33f78b3a5266c9c39bdaece110f287213e54172ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://63c63ba546896bb4b79422410dfc7a775bbe2fd58fc964be19d6e78aaa2760ec",
+				"dweb:/ipfs/QmYfinkEd7LwjnKntp3HQcDLj4QZh9DtJZC7aaPgvke4Z8"
+			]
+		}
+	},
+	"version": 1
+}

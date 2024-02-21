@@ -33,6 +33,25 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "weiValue",
+						"type": "uint256"
+					}
+				],
+				"name": "calc",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "bet",
 						"type": "uint256"
 					}
@@ -106,11 +125,11 @@
 	},
 	"sources": {
 		"contracts/rumbled-app.sol": {
-			"keccak256": "0xa8425fa65d1ad6ca6331fc5ae1cf877cdf1ca2c5a8ecfdbab6bbd91bf7e1d3ec",
+			"keccak256": "0x6d091a405742168f7b9d5085c3d515b9a5a84704f200e2659e57129d122615b1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://66fcc8a9eb5df8070dd70828f2f5803baf93d290508b87a9f6f981fd6d27feba",
-				"dweb:/ipfs/QmU3ZvAwPEqGpVE1MWM7jhzQB1SDjqKuMwRSxGqAc6Q9e1"
+				"bzz-raw://c68f7f787baab7b218dff08e65d247c1d2cc63b72a3ae6bdad3f21619a277218",
+				"dweb:/ipfs/QmNfCLyH8og98e64cGBiVdJ6H7VdXZ6aywi2A2sFAnUm2Q"
 			]
 		}
 	},

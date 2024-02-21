@@ -1,0 +1,201 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "desafioId",
+						"type": "uint256"
+					}
+				],
+				"name": "DesafioAceito",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "desafioId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "desafiante",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "desafiado",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "valorAposta",
+						"type": "uint256"
+					}
+				],
+				"name": "NovoDesafio",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_desafioId",
+						"type": "uint256"
+					}
+				],
+				"name": "aceitarDesafio",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contadorDesafios",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_valorAposta",
+						"type": "uint256"
+					}
+				],
+				"name": "criarDesafio",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_desafioId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_juiz",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_vencedor",
+						"type": "address"
+					}
+				],
+				"name": "definirVencedor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "desafios",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "desafiante",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "desafiado",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "juiz",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "valorAposta",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "desafioAceito",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "desafioConcluido",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "vencedor",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/desafio.sol": "Desafio"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/desafio.sol": {
+			"keccak256": "0xbb713136bc59ac8e587dee56d2783b4a1cd4913a092b303b64b118ef4dd57696",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6ef039858ef9c2bd06da9de3fb2b83ec05c7c6f492a9583ae48bffdebdbbf1c",
+				"dweb:/ipfs/QmPorwqk44D8niWsD4p6CMi6nYq2fvLMLj773dg5ejcjjn"
+			]
+		}
+	},
+	"version": 1
+}
