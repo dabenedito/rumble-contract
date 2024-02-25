@@ -5,6 +5,11 @@ import "../libraries/ToString.sol";
 
 contract DesafioContract {
     using ToString for uint256;
+    address private owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     // Estrutura para representar um desafio
     struct Desafio {
@@ -25,7 +30,7 @@ contract DesafioContract {
 
     // Modificador para garantir que o valor da aposta esteja dentro do intervalo especificado
     modifier valorApostaValido(uint256 _valorAposta) {
-        require(_valorAposta >= 0.0017 * (1*10**18) && _valorAposta <= 10**18, "Valor da aposta fora do intervalo permitido");
+        require(_valorAposta >= 0.0017 * (10**18) && _valorAposta <= 10**18, "Valor da aposta fora do intervalo permitido");
         _;
     }
 
@@ -36,21 +41,15 @@ contract DesafioContract {
     }
 
     // Função para criar um novo desafio
-    function criarDesafio(uint256 _valorAposta) external payable valorApostaValido(_valorAposta) {
-        // Garante que o valor enviado seja igual ao valor da aposta
-        require(msg.value == _valorAposta, "Valor enviado e diferente do valor da aposta");
-
+    function criarDesafio() external payable valorApostaValido(msg.value) {
         address _desafiado = msg.sender;
-
-        // Deduz o valor da aposta do desafiado
-        payable(address(this)).transfer(_valorAposta);
 
         // Cria o desafio
         Desafio memory novoDesafio = Desafio({
             desafiante: address(0),
             desafiado: _desafiado,
             juiz: address(0),
-            valorAposta: _valorAposta,
+            valorAposta: msg.value,
             desafioAtivo: true,
             desafioAceito: false,
             vencedor: address(0)
@@ -60,7 +59,7 @@ contract DesafioContract {
         desafiosPorDesafiado.push(novoDesafio);
 
         // Emite o evento de criação do desafio
-        emit DesafioCriado(address(0), _desafiado, _valorAposta);
+        emit DesafioCriado(address(0), _desafiado, msg.value);
     }
 
     // Função para aceitar um desafio como desafiante
@@ -69,14 +68,17 @@ contract DesafioContract {
         Desafio storage desafio = desafiosPorDesafiado[_indiceDesafio];
 
         // Garante que o desafio esteja ativo e ainda não tenha sido aceito
-        require(desafio.desafioAtivo && !desafio.desafioAceito, "Desafio nao esta ativo ou ja foi aceito");
+        require(desafio.desafioAtivo && !desafio.desafioAceito, "Desafio nao esta ativo ou ja foi aceito.");
 
         // Garante que o valor enviado seja igual ao valor da aposta
-        require(msg.value == desafio.valorAposta, "Valor enviado diferente do valor da aposta");
+        require(msg.value == desafio.valorAposta, "Valor enviado diferente do valor da aposta.");
+
+        // Garante que o desafiante não seja o desafiado
+        require(msg.sender != desafio.desafiado, "Voce nao pode aceitar o proprio desafio.");
 
         // Define o desafiante como o chamador da função
         desafio.desafiante = msg.sender;
-        payable(address(this)).transfer(desafio.valorAposta);
+    
         // Marca o desafio como aceito
         desafio.desafioAceito = true;
     }
@@ -94,6 +96,7 @@ contract DesafioContract {
 
         // Define o vencedor
         desafio.vencedor = _vencedor;
+        desafio.desafioAtivo = false;
 
         // Calcula os pagamentos
         uint256 valorPremio = desafio.valorAposta * 8 / 10; // 80% para o vencedor
@@ -103,7 +106,7 @@ contract DesafioContract {
         // Transfere os pagamentos
         payable(_vencedor).transfer(valorPremio);
         payable(desafio.juiz).transfer(pagamentoJuiz);
-        payable(address(this)).transfer(taxaAdministrativa); // Taxa administrativa vai para o contrato
+        payable(owner).transfer(taxaAdministrativa); // Taxa administrativa vai para o contrato
     }
 
     function declararJuiz(uint _indiceDesafio) external juizValido(msg.sender, _indiceDesafio) {
@@ -113,5 +116,9 @@ contract DesafioContract {
 
     function getDesafios() public view returns(Desafio[] memory) {
         return desafiosPorDesafiado;
+    }
+
+    function balance() public view returns(uint) {
+        return address(this).balance;
     }
 }

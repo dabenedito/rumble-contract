@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -44,13 +49,20 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "balance",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "_valorAposta",
+						"name": "",
 						"type": "uint256"
 					}
 				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "criarDesafio",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -215,11 +227,11 @@
 	},
 	"sources": {
 		"contracts/desafio.sol": {
-			"keccak256": "0x9dca04411dc2abcfca72841a1985b7ec03f909cdb32841caeed4a395653102b3",
+			"keccak256": "0xf0b98913b77025d54ba1a5b9136fc383b41cbc448791b3d86bcc4fd7db8d7b5e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9b5d57426f303527768b8d3e8afc0b89640a4100b04114a56a0c2a20d9e7a8b2",
-				"dweb:/ipfs/QmPipXcTYTY9zHnTx97MwQ8xeBTtx51RxfvmDS28h5DR1n"
+				"bzz-raw://4c6c674142c56114a48f94fb63d7b3a933b6b8923ebfff5e5eee68a284b27ca3",
+				"dweb:/ipfs/QmNSkcXbt3HoJS5kjZGovmLjWxnmDLmSxQTdMhSB6aGFMT"
 			]
 		},
 		"libraries/ToString.sol": {
